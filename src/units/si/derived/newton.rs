@@ -6,7 +6,7 @@ use crate::units::si::base::{kilogram::Kilogram, meter::Meter, second::Second};
 pub struct Newton {}
 
 impl SIUnit for Newton {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         expr_op!(
             expr_op!(
                 expr_unit!(Kilogram {}),
@@ -22,7 +22,7 @@ impl SIUnit for Newton {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "N".to_string()
     }
 }

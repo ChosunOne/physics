@@ -6,7 +6,7 @@ use crate::units::si::base::second::Second;
 pub struct Becquerel {}
 
 impl SIUnit for Becquerel {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         expr_op!(
             expr_unit!(1.0),
             Operator::Divide,
@@ -14,7 +14,7 @@ impl SIUnit for Becquerel {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "Bq".to_string()
     }
 }

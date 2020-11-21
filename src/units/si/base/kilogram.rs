@@ -19,11 +19,11 @@ impl SIBaseUnit for Kilogram {
 }
 
 impl SIUnit for Kilogram {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         Expression::Unit(Box::new(Kilogram {}))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "kg".to_string()
     }
 }

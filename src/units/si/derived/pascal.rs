@@ -6,8 +6,8 @@ use crate::units::si::derived::newton::Newton;
 pub struct Pascal {}
 
 impl SIUnit for Pascal {
-    fn base_units(&self) -> Expression {
-        let n = Newton {}.base_units();
+    fn base_units() -> Expression {
+        let n = Newton::base_units();
         expr_op!(
             n,
             Operator::Divide,
@@ -18,7 +18,7 @@ impl SIUnit for Pascal {
             ))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "Pa".to_string()
     }
 }

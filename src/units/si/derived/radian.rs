@@ -6,7 +6,7 @@ use crate::units::si::base::meter::Meter;
 pub struct Radian {}
 
 impl SIUnit for Radian {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         expr_op!(
             expr_unit!(Meter {}),
             Operator::Divide,
@@ -14,7 +14,7 @@ impl SIUnit for Radian {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "rad".to_string()
     }
 }

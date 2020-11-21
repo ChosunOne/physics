@@ -7,8 +7,8 @@ use crate::units::si::derived::weber::Weber;
 pub struct Tesla {}
 
 impl SIUnit for Tesla {
-    fn base_units(&self) -> Expression {
-        let wb = Weber {}.base_units();
+    fn base_units() -> Expression {
+        let wb = Weber::base_units();
         expr_op!(
             wb,
             Operator::Divide,
@@ -20,7 +20,7 @@ impl SIUnit for Tesla {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "T".to_string()
     }
 }

@@ -7,8 +7,8 @@ use crate::units::si::derived::joule::Joule;
 pub struct Gray {}
 
 impl SIUnit for Gray {
-    fn base_units(&self) -> Expression {
-        let j = Joule {}.base_units();
+    fn base_units() -> Expression {
+        let j = Joule::base_units();
         expr_op!(
             j,
             Operator::Divide,
@@ -16,7 +16,7 @@ impl SIUnit for Gray {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "Gy".to_string()
     }
 }

@@ -19,11 +19,11 @@ impl SIBaseUnit for Ampere {
 }
 
 impl SIUnit for Ampere {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         Expression::Unit(Box::new(Ampere {}))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "A".to_string()
     }
 }

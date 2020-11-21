@@ -7,7 +7,7 @@ use crate::units::si::base::second::Second;
 pub struct Katal {}
 
 impl SIUnit for Katal {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         expr_op!(
             expr_unit!(Mole {}),
             Operator::Divide,
@@ -15,7 +15,7 @@ impl SIUnit for Katal {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "kat".to_string()
     }
 }

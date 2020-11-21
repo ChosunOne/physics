@@ -7,8 +7,8 @@ use crate::units::si::derived::lumen::Lumen;
 pub struct Lux {}
 
 impl SIUnit for Lux {
-    fn base_units(&self) -> Expression {
-        let lm = Lumen {}.base_units();
+    fn base_units() -> Expression {
+        let lm = Lumen::base_units();
         expr_op!(
             lm,
             Operator::Divide,
@@ -20,7 +20,7 @@ impl SIUnit for Lux {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "lx".to_string()
     }
 }

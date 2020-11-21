@@ -7,8 +7,8 @@ use crate::units::si::derived::watt::Watt;
 pub struct Volt {}
 
 impl SIUnit for Volt {
-    fn base_units(&self) -> Expression {
-        let w = Watt {}.base_units();
+    fn base_units() -> Expression {
+        let w = Watt::base_units();
         expr_op!(
             w,
             Operator::Divide,
@@ -16,7 +16,7 @@ impl SIUnit for Volt {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "V".to_string()
     }
 }

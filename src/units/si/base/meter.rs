@@ -19,11 +19,11 @@ impl SIBaseUnit for Meter {
 }
 
 impl SIUnit for Meter {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         Expression::Unit(Box::new(Meter {}))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "m".to_string()
     }
 }

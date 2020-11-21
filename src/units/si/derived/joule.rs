@@ -7,8 +7,8 @@ use crate::units::si::derived::newton::Newton;
 pub struct Joule {}
 
 impl SIUnit for Joule {
-    fn base_units(&self) -> Expression {
-        let n = Newton {}.base_units();
+    fn base_units() -> Expression {
+        let n = Newton::base_units();
         expr_op!(
             n,
             Operator::Multiply,
@@ -16,7 +16,7 @@ impl SIUnit for Joule {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "J".to_string()
     }
 }

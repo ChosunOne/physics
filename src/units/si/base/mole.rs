@@ -19,11 +19,11 @@ impl SIBaseUnit for Mole {
 }
 
 impl SIUnit for Mole {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         Expression::Unit(Box::new(Mole {}))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "mol".to_string()
     }
 }

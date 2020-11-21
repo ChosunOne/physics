@@ -7,7 +7,7 @@ use crate::units::si::base::second::Second;
 pub struct Coulomb {}
 
 impl SIUnit for Coulomb {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         expr_op!(
             expr_unit!(Second {}),
             Operator::Multiply,
@@ -15,7 +15,7 @@ impl SIUnit for Coulomb {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "C".to_string()
     }
 }

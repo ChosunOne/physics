@@ -19,11 +19,11 @@ impl SIBaseUnit for Kelvin {
 }
 
 impl SIUnit for Kelvin {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         Expression::Unit(Box::new(Kelvin {}))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "K".to_string()
     }
 }

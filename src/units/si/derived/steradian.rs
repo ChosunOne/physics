@@ -6,7 +6,7 @@ use crate::units::si::base::meter::Meter;
 pub struct Steradian {}
 
 impl SIUnit for Steradian {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         expr_op!(
             expr_op!(
                 expr_unit!(Meter {}),
@@ -22,7 +22,7 @@ impl SIUnit for Steradian {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "sr".to_string()
     }
 }

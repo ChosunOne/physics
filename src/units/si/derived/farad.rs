@@ -6,9 +6,9 @@ use crate::units::si::derived::volt::Volt;
 pub struct Farad {}
 
 impl SIUnit for Farad {
-    fn base_units(&self) -> Expression {
-        let c = Coulomb {}.base_units();
-        let v = Volt {}.base_units();
+    fn base_units() -> Expression {
+        let c = Coulomb::base_units();
+        let v = Volt::base_units();
         expr_op!(
             c,
             Operator::Divide,
@@ -16,7 +16,7 @@ impl SIUnit for Farad {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "F".to_string()
     }
 }

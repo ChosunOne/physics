@@ -19,11 +19,11 @@ impl SIBaseUnit for Candela {
 }
 
 impl SIUnit for Candela {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         Expression::Unit(Box::new(Candela {}))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "cd".to_string()
     }
 }

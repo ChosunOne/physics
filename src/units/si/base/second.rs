@@ -19,11 +19,11 @@ impl SIBaseUnit for Second {
 }
 
 impl SIUnit for Second {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         Expression::Unit(Box::new(Second {}))
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "s".to_string()
     }
 }

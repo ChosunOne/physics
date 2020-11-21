@@ -6,7 +6,7 @@ use crate::units::si::base::second::Second;
 pub struct Hertz {}
 
 impl SIUnit for Hertz {
-    fn base_units(&self) -> Expression {
+    fn base_units() -> Expression {
         expr_op!(
             expr_unit!(1.0),
             Operator::Divide,
@@ -14,7 +14,7 @@ impl SIUnit for Hertz {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "Hz".to_string()
     }
 }

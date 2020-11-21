@@ -6,8 +6,8 @@ use crate::units::si::derived::ohm::Ohm;
 pub struct Siemens {}
 
 impl SIUnit for Siemens {
-    fn base_units(&self) -> Expression {
-        let o = Ohm {}.base_units();
+    fn base_units() -> Expression {
+        let o = Ohm::base_units();
         expr_op!(
             expr_unit!(1.0),
             Operator::Divide,
@@ -15,7 +15,7 @@ impl SIUnit for Siemens {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "S".to_string()
     }
 }

@@ -7,8 +7,8 @@ use crate::units::si::derived::steradian::Steradian;
 pub struct Lumen {}
 
 impl SIUnit for Lumen {
-    fn base_units(&self) -> Expression {
-        let sr = Steradian {}.base_units();
+    fn base_units() -> Expression {
+        let sr = Steradian::base_units();
         expr_op!(
             expr_unit!(Candela {}),
             Operator::Multiply,
@@ -16,7 +16,7 @@ impl SIUnit for Lumen {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "lm".to_string()
     }
 }

@@ -7,8 +7,8 @@ use crate::units::si::base::second::Second;
 pub struct Weber {}
 
 impl SIUnit for Weber {
-    fn base_units(&self) -> Expression {
-        let v = Volt {}.base_units();
+    fn base_units() -> Expression {
+        let v = Volt::base_units();
         expr_op!(
             v,
             Operator::Multiply,
@@ -16,7 +16,7 @@ impl SIUnit for Weber {
         )
     }
 
-    fn symbol(&self) -> String {
+    fn symbol() -> String {
         "Wb".to_string()
     }
 }

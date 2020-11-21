@@ -21,8 +21,8 @@ impl SIBaseUnit for f64 {
 }
 
 pub trait SIUnit {
-    fn base_units(&self) -> Expression;
-    fn symbol(&self) -> String;
+    fn base_units() -> Expression;
+    fn symbol() -> String;
 }
 
 pub enum Operator {
