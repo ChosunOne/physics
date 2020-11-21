@@ -17,3 +17,6 @@ pub mod celsius;
 pub mod lumen;
 pub mod lux;
 pub mod becquerel;
+pub mod gray;
+pub mod sievert;
+pub mod katal;
