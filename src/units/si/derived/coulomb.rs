@@ -1,20 +1,21 @@
 use crate::expr_op;
 use crate::expr_unit;
 use crate::units::si::si_unit::{SIUnit, Expression, Operator};
+use crate::units::si::base::ampere::Ampere;
 use crate::units::si::base::second::Second;
 
-pub struct Hertz {}
+pub struct Coulomb {}
 
-impl SIUnit for Hertz {
+impl SIUnit for Coulomb {
     fn base_units(&self) -> Expression {
         expr_op!(
-            expr_unit!(1.0),
-            Operator::Divide,
-            expr_unit!(Second {})
+            expr_unit!(Second {}),
+            Operator::Multiply,
+            expr_unit!(Ampere {})
         )
     }
 
     fn symbol(&self) -> String {
-        "Hz".to_string()
+        "C".to_string()
     }
 }

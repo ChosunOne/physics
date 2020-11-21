@@ -1,21 +1,19 @@
 use crate::expr_op;
 use crate::expr_unit;
 use crate::units::si::si_unit::{SIUnit, Expression, Operator};
-use crate::units::si::base::{kilogram::Kilogram, meter::Meter, second::Second};
+use crate::units::si::base::meter::Meter;
+use crate::units::si::derived::lumen::Lumen;
 
-pub struct Newton {}
+pub struct Lux {}
 
-impl SIUnit for Newton {
+impl SIUnit for Lux {
     fn base_units(&self) -> Expression {
+        let lm = Lumen {}.base_units();
         expr_op!(
-            expr_op!(
-                expr_unit!(Kilogram {}),
-                Operator::Multiply,
-                expr_unit!(Meter {})
-            ),
+            lm,
             Operator::Divide,
             expr_op!(
-                expr_unit!(Second {}),
+                expr_unit!(Meter {}),
                 Operator::Power,
                 expr_unit!(2.0)
             )
@@ -23,6 +21,6 @@ impl SIUnit for Newton {
     }
 
     fn symbol(&self) -> String {
-        "N".to_string()
+        "lx".to_string()
     }
 }

@@ -5,5 +5,6 @@ pub enum Dimension {
     Luminosity,
     Mass,
     Temperature,
-    Time
+    Time,
+    None
 }

@@ -1,20 +1,21 @@
 use crate::expr_op;
 use crate::expr_unit;
 use crate::units::si::si_unit::{SIUnit, Expression, Operator};
-use crate::units::si::base::second::Second;
+use crate::units::si::derived::ohm::Ohm;
 
-pub struct Hertz {}
+pub struct Siemens {}
 
-impl SIUnit for Hertz {
+impl SIUnit for Siemens {
     fn base_units(&self) -> Expression {
+        let o = Ohm {}.base_units();
         expr_op!(
             expr_unit!(1.0),
             Operator::Divide,
-            expr_unit!(Second {})
+            o
         )
     }
 
     fn symbol(&self) -> String {
-        "Hz".to_string()
+        "S".to_string()
     }
 }

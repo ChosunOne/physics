@@ -3,9 +3,9 @@ use crate::expr_unit;
 use crate::units::si::si_unit::{SIUnit, Expression, Operator};
 use crate::units::si::base::second::Second;
 
-pub struct Hertz {}
+pub struct Becquerel {}
 
-impl SIUnit for Hertz {
+impl SIUnit for Becquerel {
     fn base_units(&self) -> Expression {
         expr_op!(
             expr_unit!(1.0),
@@ -15,6 +15,6 @@ impl SIUnit for Hertz {
     }
 
     fn symbol(&self) -> String {
-        "Hz".to_string()
+        "Bq".to_string()
     }
 }

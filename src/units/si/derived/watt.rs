@@ -2,19 +2,21 @@ use crate::expr_op;
 use crate::expr_unit;
 use crate::units::si::si_unit::{SIUnit, Expression, Operator};
 use crate::units::si::base::second::Second;
+use crate::units::si::derived::joule::Joule;
 
-pub struct Hertz {}
+pub struct Watt {}
 
-impl SIUnit for Hertz {
+impl SIUnit for Watt {
     fn base_units(&self) -> Expression {
+        let j = Joule {}.base_units();
         expr_op!(
-            expr_unit!(1.0),
+            j,
             Operator::Divide,
             expr_unit!(Second {})
         )
     }
 
     fn symbol(&self) -> String {
-        "Hz".to_string()
+        "W".to_string()
     }
 }

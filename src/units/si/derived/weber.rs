@@ -1,20 +1,22 @@
 use crate::expr_op;
 use crate::expr_unit;
 use crate::units::si::si_unit::{SIUnit, Expression, Operator};
+use crate::units::si::derived::volt::Volt;
 use crate::units::si::base::second::Second;
 
-pub struct Hertz {}
+pub struct Weber {}
 
-impl SIUnit for Hertz {
+impl SIUnit for Weber {
     fn base_units(&self) -> Expression {
+        let v = Volt {}.base_units();
         expr_op!(
-            expr_unit!(1.0),
-            Operator::Divide,
+            v,
+            Operator::Multiply,
             expr_unit!(Second {})
         )
     }
 
     fn symbol(&self) -> String {
-        "Hz".to_string()
+        "Wb".to_string()
     }
 }
