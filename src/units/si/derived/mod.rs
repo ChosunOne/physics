@@ -3,6 +3,7 @@ use crate::expr_unit;
 use crate::units::si::si_unit::{SIUnit, Expression, Operator};
 use crate::units::si::base::BaseUnit::{Float, Second, Meter, Kilogram, Kelvin, Ampere, Mole, Candela};
 
+#[derive(Copy, Clone)]
 pub enum DerivedUnit {
     Becquerel,
     Celsius,

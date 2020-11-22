@@ -69,8 +69,8 @@ impl SIBaseUnit for BaseUnit {
             BaseUnit::Candela => {
                 "cd".to_string()
             }
-            BaseUnit::Float(_) => {
-                "".to_string()
+            BaseUnit::Float(f) => {
+                f.to_string()
             }
         }
     }
