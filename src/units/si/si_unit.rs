@@ -1,4 +1,5 @@
 use crate::units::dimensions::Dimension;
+use crate::units::si::base::BaseUnit;
 
 pub trait SIBaseUnit {
     fn dimension(&self) -> Dimension;
@@ -21,8 +22,8 @@ impl SIBaseUnit for f64 {
 }
 
 pub trait SIUnit {
-    fn base_units() -> Expression;
-    fn symbol() -> String;
+    fn base_units(&self) -> Expression;
+    fn symbol(&self) -> String;
 }
 
 pub enum Operator {
@@ -34,14 +35,14 @@ pub enum Operator {
 }
 
 pub enum Expression {
-    Unit(Box<dyn SIBaseUnit>),
+    Unit(BaseUnit),
     Operation(Box<Expression>, Operator, Box<Expression>)
 }
 
 #[macro_export]
 macro_rules! expr_unit {
     ($base_unit:expr) => {
-        Expression::Unit(Box::new($base_unit))
+        Expression::Unit($base_unit)
     }
 }
 
